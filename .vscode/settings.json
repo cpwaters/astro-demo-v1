@@ -1,0 +1,20 @@
+{
+    "workbench.colorTheme": "Visual Studio 2019 Dark",
+    "workbench.editor.closeOnFileDelete": true,
+
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+    },
+    "eslint.options": {
+      "extensions": [".js", ".jsx", ".md", ".mdx", ".ts", ".tsx"]
+    },
+    "eslint.validate": [
+      "markdown",
+      "mdx",
+      "javascript",
+      "javascriptreact",
+      "typescript",
+      "typescriptreact", 
+      "astro"
+    ]
+  }

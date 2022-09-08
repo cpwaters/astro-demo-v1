@@ -1,0 +1,15 @@
+---
+import '../styles.css';
+import Head from '../astro_components/Head.astro';
+import Navbar from '../astro_components/Navbar.astro';
+const { title } = Astro.props;
+---
+<html lang="en">
+    <Head title={title} />
+    <Navbar />
+    <body>
+        <main>
+            <slot />  
+        </main> 
+    </body>
+</html>

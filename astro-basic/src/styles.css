@@ -1,0 +1,116 @@
+body {
+    margin: 0;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+main {
+    margin:0 auto 20px auto;
+    font-family:Arial, Helvetica, sans-serif;
+    max-width:1100px;
+    padding: 0 10px;
+}
+
+.logo {
+    max-width:100%;
+    width:150px;
+}
+
+nav {
+    padding: 30px 0;
+    background: black;
+    margin-bottom:20px;
+    
+}
+nav li {
+    max-width:1000px;
+    margin: 0 auto;
+    list-style-type: none;
+    text-align: center;
+}
+nav a {
+    color: white;
+}
+
+/* index blog section */
+.blog-highlight, 
+.md-highlight,
+.md-posts {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius:3px;
+}
+.blog-highlight {border: 1px solid pink;}
+.md-highlight {border: 1px solid green;}
+
+.index-posts {
+    display:flex;
+    gap:1%;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.md-posts {
+    border: 1px solid green;
+    display:flex;
+    flex-direction: column;
+}
+
+.md-posts-footer {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+    margin-top: 20px;
+    justify-content: space-between;
+    align-content: center;
+}
+
+.md-posts-footer small {
+}
+
+.md-posts-footer .button, .post-create-form form button {
+    background: green;
+    padding: 10px 12px;
+    border-radius: 3px;
+    max-width: 100%;
+    text-align: center;
+    color: white;
+    border: none;
+}
+
+/* @media screen and (min-width: 1024px){
+    .index-posts {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+} */
+
+@media screen and (min-width: 768px){
+    .md-posts-footer {
+        flex-direction: row;
+        align-items:center;
+    }
+    .md-posts-footer .button {
+        width: 150px;
+    }
+}
+
+/* create */
+.post-create-form form {
+    border: 1px solid green;
+    display:flex;
+    flex-direction: column;
+    padding:20px;
+}
+
+.post-create-form form .form-control {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.post-create-form form .form-control input {
+    height: 30px;
+}
+.post-create-form form .form-control input[type=textarea] {
+    height: 300px;
+}

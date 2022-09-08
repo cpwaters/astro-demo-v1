@@ -1,0 +1,27 @@
+---
+import Head from '../astro_components/Head.astro';
+const posts = await Astro.glob('../pages/blogs/markdown/*.md');
+import { truncate } from '../js/truncate.js';
+---
+<siteLayout>
+    <div class="index-posts">
+        {posts.map(post => 
+            !post.frontmatter.draft ? 
+            <Head title={ post.frontmatter.title }/>
+            <div class="md-posts">
+                <h2>{ post.frontmatter.title }</h2>
+                <!-- { console.log(post.rawContent(post)) } -->
+                <!-- { post.getHeadings(post)[0].text } -->
+                { truncate(post.rawContent(post), 70) }
+                <br>
+                <div class="md-posts-footer">
+                    <a class="button" href={ post.url }>View Full Post</a> 
+                    <small>Author: { post.frontmatter.author } - Date: { post.frontmatter.date }</small>
+                </div>
+            </div>
+            :
+            <Head title={ 'No Posts' }/>
+            <p>No posts</p>
+        )}
+    </div>
+</siteLayout>

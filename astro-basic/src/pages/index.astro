@@ -1,0 +1,33 @@
+---
+import SiteLayout from '../layouts/siteLayout.astro'; 
+import Navbar from '../astro_components/Navbar.astro';
+import '../styles.css';
+import AstroBlogPosts from './astro-blogs.astro';
+import MDXBlogPosts from './md-mdx-blogs.astro';
+import Logo from '../full-logo-light.png';
+const directives = 'https://docs.astro.build/en/reference/directives-reference/#client-directives';
+---
+<SiteLayout>
+	<img class="logo" src={Logo} />
+		<ol>
+			<li>Quick minimal setup</li>
+			<li>Auto live reload</li>
+			<li>HTML by default</li>
+			<li>Can add popular JS frameworks &amp; style libraries <code>npm astro add BLAH</code></li>
+			<li>Uses "Islands" to load and "hydrate" components when needed</li>
+			<li>Set client directives on Islands to load JS when needed: 
+				<a href={directives} target="_blank">https://docs.astro.build/en/reference/directives-reference/#client-directives</a></li>
+		</ol>
+		<div class="blog-highlight">
+			<p>Imported <code>.astro</code> component
+			<AstroBlogPosts />
+		</div>
+		<div class="md-highlight">
+			<p>Imported <code>.md</code> component
+			<MDXBlogPosts />
+		</div>
+		<div id="theJS"></div>
+		<script>
+			import '../js/js-example.js';
+		</script>
+</SiteLayout>

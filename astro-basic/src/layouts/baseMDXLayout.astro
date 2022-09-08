@@ -1,0 +1,14 @@
+---
+import SiteLayout from '../layouts/siteLayout.astro'; 
+import Head from '../astro_components/Head.astro';
+const { frontmatter } = Astro.props;
+---
+<SiteLayout>
+    <Head title={ frontmatter.title }/>
+    <div class="md-post">
+        <h3>Blog Title: { frontmatter.title }</h3>
+        <slot />
+        <br>
+        <small>Author: { frontmatter.author } - Date: { frontmatter.date }</small>
+    </div>
+</SiteLayout>
